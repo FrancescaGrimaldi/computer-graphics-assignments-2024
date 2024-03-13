@@ -1,0 +1,49 @@
+﻿  A01.cpp
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\headers\tiny_gltf.h(3039,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\headers\tiny_gltf.h(3134,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\headers\tiny_gltf.h(5176,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\headers\tiny_gltf.h(5205,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\headers\tiny_gltf.h(5393,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(332,31): warning C4099: 'VertexDescriptor': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(187,8): message : see declaration of 'VertexDescriptor'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(334,22): warning C4099: 'Texture': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(233,8): message : see declaration of 'Texture'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(335,23): warning C4099: 'Pipeline': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(275,8): message : see declaration of 'Pipeline'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(336,34): warning C4099: 'DescriptorSetLayout': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(267,8): message : see declaration of 'DescriptorSetLayout'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(337,28): warning C4099: 'DescriptorSet': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(313,8): message : see declaration of 'DescriptorSet'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(1556,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(1819,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(1820,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\Starter.hpp(3099,48): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\TextMaker.hpp(9,483): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\TextMaker.hpp(104,21): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\TextMaker.hpp(113,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\TextMaker.hpp(114,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\TextMaker.hpp(115,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\modules\TextMaker.hpp(116,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\A01.cpp(199,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\A01.cpp(241,1): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(46,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(49,60): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(50,60): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(53,59): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(56,35): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(57,36): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(60,52): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(61,52): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(62,26): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(65,25): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(68,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\A01\figure.hpp(69,36): warning C4305: 'argument': truncation from 'double' to 'float'
+  A01.vcxproj -> C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A01\x64\Debug\A01.exe

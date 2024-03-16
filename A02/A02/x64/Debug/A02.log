@@ -1,0 +1,54 @@
+﻿  A02.cpp
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\headers\tiny_gltf.h(3039,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\headers\tiny_gltf.h(3134,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\headers\tiny_gltf.h(5176,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\headers\tiny_gltf.h(5205,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\headers\tiny_gltf.h(5393,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(335,31): warning C4099: 'VertexDescriptor': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(190,8): message : see declaration of 'VertexDescriptor'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(337,22): warning C4099: 'Texture': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(236,8): message : see declaration of 'Texture'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(338,23): warning C4099: 'Pipeline': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(278,8): message : see declaration of 'Pipeline'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(339,34): warning C4099: 'DescriptorSetLayout': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(270,8): message : see declaration of 'DescriptorSetLayout'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(340,28): warning C4099: 'DescriptorSet': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(316,8): message : see declaration of 'DescriptorSet'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(1559,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(1822,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(1823,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(3102,48): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\TextMaker.hpp(9,483): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\TextMaker.hpp(104,21): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\TextMaker.hpp(113,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\TextMaker.hpp(114,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\TextMaker.hpp(115,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\TextMaker.hpp(116,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2509,1): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2450,50): message : while compiling class template member function 'void Model<Vertex>::loadModelOBJ(std::string)'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2764,15): message : see reference to function template instantiation 'void Model<Vertex>::loadModelOBJ(std::string)' being compiled
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2760,95): message : while compiling class template member function 'void Model<Vertex>::init(BaseProject *,VertexDescriptor *,std::string,ModelType)'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\A02.cpp(141,18): message : see reference to function template instantiation 'void Model<Vertex>::init(BaseProject *,VertexDescriptor *,std::string,ModelType)' being compiled
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\A02.cpp(71,21): message : see reference to class template instantiation 'Model<Vertex>' being compiled
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2537,1): warning C4267: 'argument': conversion from 'size_t' to 'const unsigned long', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2518,65): message : while compiling class template member function 'void Model<Vertex>::loadModelGLTF(std::string,bool)'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2766,16): message : see reference to function template instantiation 'void Model<Vertex>::loadModelGLTF(std::string,bool)' being compiled
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2549,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2591,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2605,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2619,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2633,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  A02.vcxproj -> C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\x64\Debug\A02.exe

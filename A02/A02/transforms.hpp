@@ -40,23 +40,43 @@ void SetTransform(A02 *A) {
 	A->SetMatrix(1,  M, false);
 
 	// FROM THIS POINT ON, you have to find the correct transform to solve the puzzle.
+	// Piece 2 transformation: proportional scaling of factor 3 + translation
 	M = glm::mat4(1.0f);
-	A->SetMatrix(2,  M, true);
+	glm::mat4 Sp2 = glm::scale(M, glm::vec3(3));
+	glm::mat4 T2 = glm::translate(M, glm::vec3(-6, 0, -3));
+	M = T2 * Sp2;
+	A->SetMatrix(2,  M, false);
 	
+	// Piece 3 transformation: rotation of 15° around z axis + translation
 	M = glm::mat4(1.0f);
+	glm::mat4 R3z = glm::rotate(M, glm::radians(-15.0f), glm::vec3(0,0,1));
+	glm::mat4 T3 = glm::translate(M, glm::vec3(0, 0, 1));
+	M = T3 * R3z;
 	A->SetMatrix(3,  M, false);
 	
+	// Piece 4 transformation: rotation of 180° around z axis + translation
 	M = glm::mat4(1.0f);
+	glm::mat4 R4z = glm::rotate(M, glm::radians(-180.0f), glm::vec3(0, 0, 1));
+	glm::mat4 T4 = glm::translate(M, glm::vec3(2, 0.1, 1));
+	M = T4 * R4z;
 	A->SetMatrix(4,  M, false);
 	
+	// Piece 5 transformation: translation
 	M = glm::mat4(1.0f);
+	glm::mat4 T5 = glm::translate(M, glm::vec3(4, 0, 4));
+	M = T5;
 	A->SetMatrix(5,  M, false);
 	
+	// Piece 6 transformation: non-proportional scaling + translation
 	M = glm::mat4(1.0f);
+	glm::mat4 S6 = glm::scale(M, glm::vec3(2, 1, 1.25));
+	glm::mat4 T6 = glm::translate(M, glm::vec3(0, 0, -1.25));
+	M = T6 * S6;
 	A->SetMatrix(6,  M, false);
 	
+	// Piece 7 transformation: 
 	M = glm::mat4(1.0f);
-	A->SetMatrix(7,  M, false);
+	A->SetMatrix(7,  M, true);
 	
 	M = glm::mat4(1.0f);
 	A->SetMatrix(8,  M, false);

@@ -32,63 +32,54 @@ void SetTransform(A02* A) {
 	M = glm::mat4(1.0f);
 	A->SetMatrix(0, M, false);
 
-	// this is an example on how to highlight a piece and move it.
-	// to put it in place, just replace the following line with an identity matrix,
-	// that is: A->SetMatrix(0,  M, false);
-
-	M = glm::mat4(1.0f);			// to put this piece in places, uncomment this line and delete the two above
+	// Piece 1
+	M = glm::mat4(1.0f);
 	A->SetMatrix(1, M, false);
 
 	// FROM THIS POINT ON, you have to find the correct transform to solve the puzzle.
+
 	// Piece 2 transformation: proportional scaling of factor 3 + translation
 	M = glm::mat4(1.0f);
-	glm::mat4 Sp2 = glm::scale(M, glm::vec3(3));
-	glm::mat4 T2 = glm::translate(M, glm::vec3(-6, 0, -3));
-	M = T2 * Sp2;
+	M = glm::scale(M, glm::vec3(3));
+	M *= glm::translate(glm::vec3(-2, 0, -1));
 	A->SetMatrix(2, M, false);
 
 	// Piece 3 transformation: rotation of 15° around z axis + translation
 	M = glm::mat4(1.0f);
-	glm::mat4 R3z = glm::rotate(M, glm::radians(-15.0f), glm::vec3(0, 0, 1));
-	glm::mat4 T3 = glm::translate(M, glm::vec3(0, 0, 1));
-	M = T3 * R3z;
+	M = glm::rotate(M, glm::radians(-15.0f), glm::vec3(0, 0, 1));
+	M *= glm::translate(glm::vec3(0, 0, 1));
 	A->SetMatrix(3, M, false);
 
 	// Piece 4 transformation: rotation of 180° around z axis + translation
 	M = glm::mat4(1.0f);
-	glm::mat4 R4z = glm::rotate(M, glm::radians(-180.0f), glm::vec3(0, 0, 1));
-	glm::mat4 T4 = glm::translate(M, glm::vec3(2, 0.1, 1));
-	M = T4 * R4z;
+	M = glm::rotate(M, glm::radians(-180.0f), glm::vec3(0, 0, 1));
+	M *= glm::translate(glm::vec3(-2, -0.1, 1));
 	A->SetMatrix(4, M, false);
 
 	// Piece 5 transformation: translation
 	M = glm::mat4(1.0f);
-	glm::mat4 T5 = glm::translate(M, glm::vec3(4, 0, 4));
-	M = T5;
+	M = glm::translate(M, glm::vec3(4, 0, 4));
 	A->SetMatrix(5, M, false);
 
 	// Piece 6 transformation: non-proportional scaling + translation
 	M = glm::mat4(1.0f);
-	glm::mat4 S6 = glm::scale(M, glm::vec3(2, 1, 1.25));
-	glm::mat4 T6 = glm::translate(M, glm::vec3(0, 0, -1.25));
-	M = T6 * S6;
+	M = glm::scale(M, glm::vec3(2, 1, 1.25));
+	M *= glm::translate(glm::vec3(0, 0, -1));
 	A->SetMatrix(6, M, false);
 
 	// Piece 7 transformation: shear + translation
 	M = glm::mat4(1.0f);
-	glm::mat4 Sh7 = glm::shearZ3D(M, -0.5f, 0.0f);
-	glm::mat4 T7 = glm::translate(M, glm::vec3(2.5, 0, -1));
-	M = T7 * Sh7;
+	M = glm::shearZ3D(M, -0.5f, 0.0f);
+	M *= glm::translate(glm::vec3(2, 0, -1));
 	A->SetMatrix(7, M, false);
 
-	// Piece 8 transformation -> TODO: fix this to make it more precise
+	// Piece 8 transformation: rotation of 90° around y + shear x and z + non-proportional scaling + translation
 	M = glm::mat4(1.0f);
-	glm::mat4 Ry8 = glm::rotate(M, glm::radians(83.0f), glm::vec3(0, 1, 0));
-	glm::mat4 ShZ8 = glm::shearZ3D(M, 0.65f, 0.0f);
-	glm::mat4 ShX8 = glm::shearX3D(M, 0.0f, 0.5f);
-	glm::mat4 S8 = glm::scale(M, glm::vec3(1.88, 1.0, 1.55));
-	glm::mat4 T8 = glm::translate(M, glm::vec3(0.98, 2.0, 0.95));
-	M = T8 * S8 * ShX8 * ShZ8 * Ry8;
+	M = glm::rotate(M, glm::radians(90.0f), glm::vec3(0, 1, 0));
+	M = glm::shearX3D(M, 0.0f, -0.5f);
+	M = glm::shearZ3D(M, -0.65f, 0.0f);
+	M *= glm::scale(glm::vec3(2, 1, 1.5));
+	M *= glm::translate(glm::vec3(-0.34,2,0.34));
 	A->SetMatrix(8, M, false);
 
 	// Piece 9 transformation: none, already in place
@@ -97,28 +88,34 @@ void SetTransform(A02* A) {
 
 	// Piece 10 transformation: rotation of 90° around y + proportional scaling + translation
 	M = glm::mat4(1.0f);
-	glm::mat4 Ry10 = glm::rotate(M, glm::radians(90.0f), glm::vec3(0, 1, 0));
-	glm::mat4 Sp10 = glm::scale(M, glm::vec3(2));
-	glm::mat4 T10 = glm::translate(M, glm::vec3(3, 2, 2));
-	M = T10 * Sp10 * Ry10;
+	M = glm::rotate(M, glm::radians(90.0f), glm::vec3(0, 1, 0));
+	M *= glm::scale(glm::vec3(2));
+	M *= glm::translate(glm::vec3(-1, 1, 1.5));
 	A->SetMatrix(10, M, false);
 
 	// Piece 11 transformation: rotation of 135° around y axis + translation
 	M = glm::mat4(1.0f);
-	glm::mat4 Ry11 = glm::rotate(M, glm::radians(135.0f), glm::vec3(0, 1, 0));
-	glm::mat4 T11 = glm::translate(M, glm::vec3(1.3, 2, 2.538));
-	M = T11 * Ry11;
+	M = glm::rotate(M, glm::radians(135.0f), glm::vec3(0, 1, 0));
+	M *= glm::translate(glm::vec3(-2.705, 2, -0.873));
 	A->SetMatrix(11, M, false);
 
-	// Piece 12 transformation: TOOD
+	// Piece 12 transformation: rotation of 90° around y axis + non-proportional scaling + translation
 	M = glm::mat4(1.0f);
-	A->SetMatrix(12, M, true);
+	M = glm::rotate(M, glm::radians(90.0f), glm::vec3(0, 1, 0));
+	M *= glm::scale(glm::vec3(0.5, 1, 1));
+	M *= glm::translate(glm::vec3(1, 2, 0));
+	A->SetMatrix(12, M, false);
 
-	// Piece 13 transformation: TODO
+	// Piece 13 transformation: rotation around all axis + translation
 	M = glm::mat4(1.0f);
+	M = glm::rotate(M, glm::radians(45.0f), glm::vec3(0, 1, 0));
+	M *= glm::rotate(glm::radians(-45.0f), glm::vec3(0, 0, 1));
+	M *= glm::rotate(glm::radians(-90.0f), glm::vec3(1, 0, 0));
+	M *= glm::translate(glm::vec3(-0.92, -0.7, 0.92));
 	A->SetMatrix(13, M, false);
 
-	// Piece 14 transformation: TODO
+	// Piece 14 transformation: rotation of 150° around y axis + translation
 	M = glm::mat4(1.0f);
+	M = glm::rotate(M, glm::radians(150.0f), glm::vec3(0, 1, 0));
+	M *= glm::translate(glm::vec3(2.23, 2, 0.14));
 	A->SetMatrix(14, M, false);
-}

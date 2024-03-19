@@ -50,5 +50,4 @@ C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\S
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2605,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2619,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\A02\modules\Starter.hpp(2633,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   A02.vcxproj -> C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A02\x64\Debug\A02.exe

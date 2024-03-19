@@ -79,7 +79,7 @@ void SetTransform(A02* A) {
 	M = glm::shearX3D(M, 0.0f, -0.5f);
 	M = glm::shearZ3D(M, -0.65f, 0.0f);
 	M *= glm::scale(glm::vec3(2, 1, 1.5));
-	M *= glm::translate(glm::vec3(-0.34,2,0.34));
+	M *= glm::translate(glm::vec3(-0.34, 2, 0.34));
 	A->SetMatrix(8, M, false);
 
 	// Piece 9 transformation: none, already in place
@@ -119,3 +119,4 @@ void SetTransform(A02* A) {
 	M = glm::rotate(M, glm::radians(150.0f), glm::vec3(0, 1, 0));
 	M *= glm::translate(glm::vec3(2.23, 2, 0.14));
 	A->SetMatrix(14, M, false);
+}

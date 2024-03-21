@@ -38,6 +38,8 @@ C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A03\A03\modules\S
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A03\A03\A03.cpp(255,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A03\A03\A03.cpp(256,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A03\A03\A03.cpp(260,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A03\A03\cameras.hpp(46,48): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A03\A03\cameras.hpp(100,9): warning C4305: '=': truncation from 'double' to 'float'
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A03\A03\modules\Starter.hpp(2523,1): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [

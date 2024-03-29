@@ -1,0 +1,30 @@
+﻿  A06.cpp
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\headers\tiny_gltf.h(3039,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\headers\tiny_gltf.h(3134,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\headers\tiny_gltf.h(5176,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\headers\tiny_gltf.h(5205,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\headers\tiny_gltf.h(5393,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(332,31): warning C4099: 'VertexDescriptor': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(187,8): message : see declaration of 'VertexDescriptor'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(334,22): warning C4099: 'Texture': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(233,8): message : see declaration of 'Texture'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(335,23): warning C4099: 'Pipeline': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(275,8): message : see declaration of 'Pipeline'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(336,34): warning C4099: 'DescriptorSetLayout': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(267,8): message : see declaration of 'DescriptorSetLayout'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(337,28): warning C4099: 'DescriptorSet': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(313,8): message : see declaration of 'DescriptorSet'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(1556,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(1819,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(1820,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\A06\modules\Starter.hpp(3099,48): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  A06.vcxproj -> C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A06\x64\Debug\A06.exe

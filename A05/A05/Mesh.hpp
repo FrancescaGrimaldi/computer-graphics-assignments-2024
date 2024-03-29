@@ -1,7 +1,7 @@
 
 
 /**************
- Creae the meshes, as described below
+ Create the meshes, as described below
  
  WARNING!
  Since it is a C program, you can use for loops and functions if you think they can be helpful in your solution.
@@ -43,12 +43,31 @@ void MakeCube(float size, std::vector<glm::vec3> &vertices, std::vector<uint32_t
 //
 // HINT: the procedure below creates a square. You can use it as a side of the cube (please remember
 // to change the value of the y component, otherwise the result will be wrong
-	vertices = {
+/*	vertices = {
 				   {-size/2.0f,0.0f,-size/2.0f},
 				   {-size/2.0f,0.0f, size/2.0f},
 				   { size/2.0f,0.0f,-size/2.0f},
 				   { size/2.0f,0.0f, size/2.0f}};
-	indices = {0, 1, 2,    1, 3, 2};
+	indices = {0, 1, 2,    1, 3, 2}; */
+
+	vertices = {
+				   {-size/2.0f, -size/2.0f, -size/2.0f},
+				   {-size/2.0f, -size/2.0f,  size/2.0f},
+				   { size/2.0f, -size/2.0f, -size/2.0f},
+				   { size/2.0f, -size/2.0f,  size/2.0f},
+				   {-size/2.0f, size/2.0f, -size/2.0f},
+				   {-size/2.0f, size/2.0f,  size/2.0f},
+				   { size/2.0f, size/2.0f, -size/2.0f},
+				   { size/2.0f, size/2.0f,  size/2.0f}
+	};
+	indices = {
+				   4,5,6, 5,7,6,	// top
+				   0,2,1, 1,2,3,	// bottom
+				   0,1,4, 1,5,4,	// left
+				   2,6,3, 3,6,7,	// right
+				   0,4,2, 2,4,6,	// front face
+				   1,3,5, 5,3,7,	// back face
+	};
 
 }
 
@@ -65,12 +84,54 @@ void MakeCylinder(float radius, float height, int slices, std::vector<glm::vec3>
 //
 // HINT: the procedure below creates a rectangle. You have to change it, or you will obtain a wrong result
 // You should use a for loop, and you should start from the procedure to create a circle seen during the lesson
-	vertices = {
+	/* vertices = {
 				   {-radius,-height/2.0f,0.0f},
 				   {-radius, height/2.0f,0.0f},
 				   { radius,-height/2.0f,0.0f},
 				   { radius, height/2.0f,0.0f}};
-	indices = {0, 2, 1,    1, 2, 3};
+	indices = {0, 2, 1,    1, 2, 3}; */
+	vertices.resize((slices + 1) * 2);
+	indices.resize(6 * slices);
+	
+	for (int i = 0; i <= slices; ++i) {
+		float ang = 2.0f * M_PI * (float)i / (float)slices;
+		float x = radius * cos(ang);
+		float z = radius * sin(ang);
+
+		vertices[i] = { x, -height/2.0f, z };
+		vertices[i + slices + 1] = { x, height/2.0f, z };
+	}
+
+	for (int i = 0; i < slices; ++i) {
+		indices[6 * i] = i;
+		indices[6 * i + 1] = i + slices + 1;
+		indices[6 * i + 2] = i + 1;
+
+		indices[6 * i + 3] = i + 1;
+		indices[6 * i + 4] = i + slices + 1;
+		indices[6 * i + 5] = i + slices + 2;
+	}
+
+	// TODO: review this part
+	int bottomCenterIdx = vertices.size(); // Index of the bottom center vertex
+	int topCenterIdx = vertices.size() + 1; // Index of the top center vertex
+	vertices.push_back(glm::vec3(0.0f, -height / 2.0f, 0.0f)); // Bottom center vertex
+	vertices.push_back(glm::vec3(0.0f, height / 2.0f, 0.0f)); // Top center vertex
+
+	// Generate bottom cap indices
+	for (int i = 0; i < slices; ++i) {
+		indices.push_back(bottomCenterIdx);
+		indices.push_back(i);
+		indices.push_back((i + 1) % slices);
+	}
+
+	// Generate top cap indices
+	int offset = slices + 1;
+	for (int i = 0; i < slices; ++i) {
+		indices.push_back(topCenterIdx);
+		indices.push_back((i + 1) % slices + offset);
+		indices.push_back(i + offset);
+	}
 
 }
 
@@ -87,11 +148,39 @@ void MakeCone(float radius, float height, int slices, std::vector<glm::vec3> &ve
 //
 // HINT: the procedure below creates a triangle. You have to change it, or you will obtain a wrong result
 // You should use a for loop, and you should start from the procedure to create a circle seen during the lesson
-	vertices = {
+/*	vertices = {
 				   {-radius,-height/2.0f,0.0f},
 				   { radius,-height/2.0f,0.0f},
 				   { 0.0f, height/2.0f,0.0f}};
-	indices = {0, 1, 2};
+	indices = {0, 1, 2}; */
+
+	vertices.resize(slices + 2);
+	indices.resize(3 * slices);
+
+	vertices[slices] = { 0.0f, height/2.0f, 0.0f };  // Apex of the cone
+
+	for (int i = 0; i < slices; ++i) {
+		float ang = 2.0f * M_PI * (float)i / (float)slices;
+		float x = radius * cos(ang);
+		float z = radius * sin(ang);
+
+		vertices[i] = { x, -height/2.0f, z };
+
+		indices[3 * i] = i;
+		indices[3 * i + 1] = slices;  // Apex index 
+		indices[3 * i + 2] = (i + 1) % slices;
+	}
+
+	// TODO: review this part
+	// Generate bottom cap vertices and indices
+	int bottomCenterIdx = vertices.size(); // Index of the bottom center vertex
+	vertices.push_back(glm::vec3(0.0f, -height / 2.0f, 0.0f)); // Bottom center vertex
+
+	for (int i = 0; i < slices; ++i) {
+		indices.push_back(bottomCenterIdx);
+		indices.push_back(i);
+		indices.push_back((i + 1) % slices);
+	}
 }
 
 void MakeSphere(float radius, int rings, int slices, std::vector<glm::vec3> &vertices, std::vector<uint32_t> &indices)
@@ -107,7 +196,7 @@ void MakeSphere(float radius, int rings, int slices, std::vector<glm::vec3> &ver
 // HINT: the procedure below creates a circle. You have to change it, or you will obtain a wrong result
 // You should use two nested for loops, one used to span across the rings, and the other that spans along
 // the rings.
-	vertices.resize(slices+1);
+/*	vertices.resize(slices + 1);
 	indices.resize(3*slices);
 	vertices[slices]= {0.0f,0.0f,0.0f};
 	for(int i = 0; i < slices; i++) {
@@ -116,5 +205,35 @@ void MakeSphere(float radius, int rings, int slices, std::vector<glm::vec3> &ver
 		indices[3*i  ] = slices;
 		indices[3*i+1] = i;
 		indices[3*i+2] = (i+1) % slices;
+	} */
+
+	vertices.resize((rings + 1) * (slices + 1));
+	indices.resize(6 * rings * slices);
+
+	for (int i = 0; i <= rings; ++i) {
+		float ang2 = M_PI * (float)i / (float)rings;
+		for (int j = 0; j <= slices; ++j) {
+			float ang = 2.0f * M_PI * (float)j / (float)slices;
+			float x = radius * sin(ang2) * cos(ang);
+			float y = radius * cos(ang2);
+			float z = radius * sin(ang2) * sin(ang);
+
+			vertices[i * (slices + 1) + j] = { x, y, z };
+		}
+	}
+
+	for (int i = 0; i < rings; ++i) {
+		for (int j = 0; j < slices; ++j) {
+			int current = i * (slices + 1) + j;
+			int next = current + slices + 1;
+
+			indices[6 * (i * slices + j)] = current;
+			indices[6 * (i * slices + j) + 1] = current + 1;
+			indices[6 * (i * slices + j) + 2] = next;
+
+			indices[6 * (i * slices + j) + 3] = current + 1;
+			indices[6 * (i * slices + j) + 4] = next + 1;
+			indices[6 * (i * slices + j) + 5] = next;
+		}
 	}
 }

@@ -145,6 +145,9 @@
   <ItemGroup>
     <ClCompile Include="A09.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Mesh.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

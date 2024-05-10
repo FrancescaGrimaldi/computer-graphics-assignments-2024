@@ -49,12 +49,54 @@ void MakeCube(float size, std::vector<std::array<float,6>> &vertices, std::vecto
 //
 // HINT: the procedure below creates a square. You can use it as a side of the cube (please remember
 // to change the value of the y component, otherwise the result will be wrong
-	vertices = {
+/*	vertices = {
 				   {-size/2.0f,0.0f,-size/2.0f,0.0f,1.0f,0.0f},
 				   {-size/2.0f,0.0f, size/2.0f,0.0f,1.0f,0.0f},
 				   { size/2.0f,0.0f,-size/2.0f,0.0f,1.0f,0.0f},
 				   { size/2.0f,0.0f, size/2.0f,0.0f,1.0f,0.0f}};
 	indices = {0, 1, 2,    1, 3, 2};
+*/ 
+    vertices = {
+        // 0-3
+        {-size/2.0f, -size/2.0f, -size/2.0f, 0.0f, -1.0f, 0.0f}, // 0
+        {-size/2.0f, -size/2.0f,  size/2.0f, 0.0f, -1.0f, 0.0f}, // 1
+        { size/2.0f, -size/2.0f, -size/2.0f, 0.0f, -1.0f, 0.0f}, // 2
+        { size/2.0f, -size/2.0f,  size/2.0f, 0.0f, -1.0f, 0.0f}, // 3
+        // 4-7
+        {-size/2.0f,  size/2.0f, -size/2.0f, 0.0f, 1.0f, 0.0f},
+        {-size/2.0f,  size/2.0f,  size/2.0f, 0.0f, 1.0f, 0.0f},
+        { size/2.0f,  size/2.0f, -size/2.0f, 0.0f, 1.0f, 0.0f},
+        { size/2.0f,  size/2.0f,  size/2.0f, 0.0f, 1.0f, 0.0f},
+        // 8-11
+        {-size/2.0f, -size/2.0f,  size/2.0f, 0.0f, 0.0f, 1.0f},
+        { size/2.0f, -size/2.0f,  size/2.0f, 0.0f, 0.0f, 1.0f},
+        {-size/2.0f,  size/2.0f,  size/2.0f, 0.0f, 0.0f, 1.0f},
+        { size/2.0f,  size/2.0f,  size/2.0f, 0.0f, 0.0f, 1.0f},
+        // 12-15
+        {-size/2.0f, -size/2.0f, -size/2.0f, 0.0f, 0.0f, -1.0f},
+        { size/2.0f, -size/2.0f, -size/2.0f, 0.0f, 0.0f, -1.0f},
+        {-size/2.0f,  size/2.0f, -size/2.0f, 0.0f, 0.0f, -1.0f},
+        { size/2.0f,  size/2.0f, -size/2.0f, 0.0f, 0.0f, -1.0f},
+        // 16-19
+        {-size/2.0f, -size/2.0f, -size/2.0f, -1.0f, 0.0f, 0.0f},
+        {-size/2.0f, -size/2.0f,  size/2.0f, -1.0f, 0.0f, 0.0f},
+        {-size/2.0f,  size/2.0f, -size/2.0f, -1.0f, 0.0f, 0.0f},
+        {-size/2.0f,  size/2.0f,  size/2.0f, -1.0f, 0.0f, 0.0f},
+        // 20-23
+        { size/2.0f, -size/2.0f, -size/2.0f, 1.0f, 0.0f, 0.0f},
+        { size/2.0f, -size/2.0f,  size/2.0f, 1.0f, 0.0f, 0.0f},
+        { size/2.0f,  size/2.0f, -size/2.0f, 1.0f, 0.0f, 0.0f},
+        { size/2.0f,  size/2.0f,  size/2.0f, 1.0f, 0.0f, 0.0f}
+    };
+
+    indices = {
+        4,5,6, 5,7,6,           // top
+        0,2,1, 1,2,3,           // bottom
+        16,17,18, 17,19,18,     // left
+        20,22,21, 21,22,23,     // right
+        8,9,10, 10,9,11,        // front face
+        12,14,13, 13,14,15,     // back face
+    };
 
 }
 
@@ -74,13 +116,55 @@ void MakeCylinder(float radius, float height, int slices, std::vector<std::array
 //
 // HINT: the procedure below creates a rectangle. You have to change it, or you will obtain a wrong result
 // You should use a for loop, and you should start from the procedure to create a circle seen during the lesson
-	vertices = {
+/*  vertices = {
 				   {-radius,-height/2.0f,0.0f,0.0f,0.0f,1.0f},
 				   {-radius, height/2.0f,0.0f,0.0f,0.0f,1.0f},
 				   { radius,-height/2.0f,0.0f,0.0f,0.0f,1.0f},
 				   { radius, height/2.0f,0.0f,0.0f,0.0f,1.0f}};
-	indices = {0, 2, 1,    1, 2, 3};
+    indices = {0, 2, 1,    1, 2, 3};
+*/
+	vertices.resize((slices + 1) * 2);
+	indices.resize(6 * slices);
 
+	for (int i = 0; i <= slices; ++i) {
+		float ang = 2.0f * M_PI * (float)i / (float)slices;
+		float x = radius * cos(ang);
+		float z = radius * sin(ang);
+
+		vertices[i] = { x, -height/2.0f, z, x, 0.0f, z };		  // bottom
+		vertices[i+slices+1] = { x, height/2.0f, z, x, 0.0f, z };	  // top
+	}
+
+	for (int i = 0; i < slices; ++i) {
+		indices[6 * i] = i;
+		indices[6 * i + 1] = i + slices + 1;
+		indices[6 * i + 2] = i + 1;
+
+		indices[6 * i + 3] = i + 1;
+		indices[6 * i + 4] = i + slices + 1;
+		indices[6 * i + 5] = i + slices + 2;
+	}
+
+	// TODO: review this part
+	int bottomCenterIdx = vertices.size(); // Index of the bottom center vertex
+	int topCenterIdx = vertices.size() + 1; // Index of the top center vertex
+	vertices.push_back({ 0.0f, -height/2.0f, 0.0f, 0.0f, -1.0f, 0.0f }); // Bottom center vertex
+	vertices.push_back({ 0.0f, height/2.0f, 0.0f, 0.0f, 1.0f, 0.0f }); // Top center vertex
+
+	// Generate bottom cap indices
+	for (int i = 0; i < slices; ++i) {
+		indices.push_back(bottomCenterIdx);
+		indices.push_back(i);
+		indices.push_back((i + 1) % slices);
+	}
+
+	// Generate top cap indices
+	int offset = slices + 1;
+	for (int i = 0; i < slices; ++i) {
+		indices.push_back(topCenterIdx);
+		indices.push_back((i + 1) % slices + offset);
+		indices.push_back(i + offset);
+	}
 }
 
 void MakeCone(float radius, float height, int slices, std::vector<std::array<float,6>> &vertices, std::vector<uint32_t> &indices) {

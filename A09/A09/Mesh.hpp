@@ -131,7 +131,7 @@ void MakeCylinder(float radius, float height, int slices, std::vector<std::array
 		float x = radius * cos(ang);
 		float z = radius * sin(ang);
 
-		vertices[i] = { x, -height/2.0f, z, x, 0.0f, z };		  // bottom
+		vertices[i] = { x, -height/2.0f, z, x, 0.0f, z };			  // bottom
 		vertices[i+slices+1] = { x, height/2.0f, z, x, 0.0f, z };	  // top
 	}
 
@@ -183,11 +183,40 @@ void MakeCone(float radius, float height, int slices, std::vector<std::array<flo
 //
 // HINT: the procedure below creates a triangle. You have to change it, or you will obtain a wrong result
 // You should use a for loop, and you should start from the procedure to create a circle seen during the lesson
-	vertices = {
+/*	vertices = {
 				   {-radius,-height/2.0f,0.0f,0.0f,0.0f,1.0f},
 				   { radius,-height/2.0f,0.0f,0.0f,0.0f,1.0f},
 				   { 0.0f,   height/2.0f,0.0f,0.0f,0.0f,1.0f}};
 	indices = {0, 1, 2};
+*/
+
+	vertices.resize(slices + 2);
+	indices.resize(3 * slices);
+
+	vertices[slices] = { 0.0f, height/2.0f, 0.0f, 0.0f, 0.0f, 0.0f };  // Apex of the cone
+
+	for (int i = 0; i < slices; ++i) {
+		float ang = 2.0f * M_PI * (float)i / (float)slices;
+		float x = radius * cos(ang);
+		float z = radius * sin(ang);
+
+		vertices[i] = { x, -height/2.0f, z, x, 0.0f, z};
+
+		indices[3 * i] = i;
+		indices[3 * i + 1] = slices;  // Apex index 
+		indices[3 * i + 2] = (i + 1) % slices;
+	}
+
+	// TODO: review this part
+	// Generate bottom cap vertices and indices
+	int bottomCenterIdx = vertices.size(); // Index of the bottom center vertex
+	vertices.push_back({ 0.0f, -height / 2.0f, 0.0f, 0.0f, -1.0f, 0.0f }); // Bottom center vertex
+
+	for (int i = 0; i < slices; ++i) {
+		indices.push_back(bottomCenterIdx);
+		indices.push_back(i);
+		indices.push_back((i + 1) % slices);
+	}
 }
 
 void MakeSphere(float radius, int rings, int slices, std::vector<std::array<float,6>> &vertices, std::vector<uint32_t> &indices)
@@ -206,7 +235,7 @@ void MakeSphere(float radius, int rings, int slices, std::vector<std::array<floa
 // HINT: the procedure below creates a circle. You have to change it, or you will obtain a wrong result
 // You should use two nested for loops, one used to span across the rings, and the other that spans along
 // the rings.
-	vertices.resize(slices+1);
+/*	vertices.resize(slices + 1);
 	indices.resize(3*slices);
 	vertices[slices] = {0.0f,0.0f,0.0f,0.0f,0.0f,1.0f};
 	for(int i = 0; i < slices; i++) {
@@ -215,5 +244,35 @@ void MakeSphere(float radius, int rings, int slices, std::vector<std::array<floa
 		indices[3*i  ] = slices;
 		indices[3*i+1] = i;
 		indices[3*i+2] = (i+1) % slices;
+	}
+*/
+	vertices.resize((rings + 1) * (slices + 1));
+	indices.resize(6 * rings * slices);
+
+	for (int i = 0; i <= rings; ++i) {
+		float ang2 = M_PI * (float)i / (float)rings;
+		for (int j = 0; j <= slices; ++j) {
+			float ang = 2.0f * M_PI * (float)j / (float)slices;
+			float x = radius * sin(ang2) * cos(ang);
+			float y = radius * cos(ang2);
+			float z = radius * sin(ang2) * sin(ang);
+
+			vertices[i * (slices + 1) + j] = { x, y, z, x, y, z };
+		}
+	}
+
+	for (int i = 0; i < rings; ++i) {
+		for (int j = 0; j < slices; ++j) {
+			int current = i * (slices + 1) + j;
+			int next = current + slices + 1;
+
+			indices[6 * (i * slices + j)] = current;
+			indices[6 * (i * slices + j) + 1] = current + 1;
+			indices[6 * (i * slices + j) + 2] = next;
+
+			indices[6 * (i * slices + j) + 3] = current + 1;
+			indices[6 * (i * slices + j) + 4] = next + 1;
+			indices[6 * (i * slices + j) + 5] = next;
+		}
 	}
 }

@@ -1,0 +1,93 @@
+﻿  A10.cpp
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\headers\tiny_gltf.h(3039,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\headers\tiny_gltf.h(3134,17): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\headers\tiny_gltf.h(5176,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\headers\tiny_gltf.h(5205,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\headers\tiny_gltf.h(5393,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(349,31): warning C4099: 'VertexDescriptor': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(202,8): message : see declaration of 'VertexDescriptor'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(351,22): warning C4099: 'Texture': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(248,8): message : see declaration of 'Texture'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(352,23): warning C4099: 'Pipeline': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(294,8): message : see declaration of 'Pipeline'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(353,34): warning C4099: 'DescriptorSetLayout': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(284,8): message : see declaration of 'DescriptorSetLayout'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(354,28): warning C4099: 'DescriptorSet': type name first seen using 'struct' now seen using 'class'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(323,8): message : see declaration of 'DescriptorSet'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(1573,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(1840,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(1841,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2530,52): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2559,151): warning C4267: 'argument': conversion from 'size_t' to 'const unsigned long', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2571,74): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2613,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2627,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2641,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2655,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2770,36): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2769,36): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2768,36): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(2767,45): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(3177,48): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\Starter.hpp(3305,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\TextMaker.hpp(9,483): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\TextMaker.hpp(107,21): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\TextMaker.hpp(116,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\TextMaker.hpp(117,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\TextMaker.hpp(118,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\modules\TextMaker.hpp(119,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(370,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(485,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(486,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(493,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(494,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(500,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(501,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(507,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\A10\A10.cpp(508,1): warning C4305: '=': truncation from 'double' to 'float'
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  A10.vcxproj -> C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A10\x64\Debug\A10.exe

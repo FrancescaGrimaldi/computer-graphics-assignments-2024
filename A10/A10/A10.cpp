@@ -37,8 +37,19 @@ struct skyBoxUniformBufferObject {
 };
 
 // **A10** Place here the CPP struct for the uniform buffer for the matrices
+struct matUniformBufferObject {
+	glm::mat4 mvpMat;
+	glm::mat4 mMat;
+	glm::mat4 nMat;
+};
 
 // **A10** Place here the CPP struct for the uniform buffer for the parameters
+struct paramUniformBufferObject {
+	float Pow;
+	float Ang;
+	float ShowCloud;
+	float ShowTexture;
+};
 
 
 
@@ -60,6 +71,12 @@ struct skyBoxVertex {
 };
 
 // **A10** Place here the CPP struct for the vertex definition
+struct planetVertex {
+	glm::vec3 fragPos;
+	glm::vec3 fragNorm;
+	glm::vec3 fragUV;
+	glm::vec4 fragTan;
+};
 
 
 
@@ -75,18 +92,21 @@ class A10 : public BaseProject {
 	DescriptorSetLayout DSLskyBox;	// For skyBox
 
 // **A10** Place here the variable for the DescriptorSetLayout
+	DescriptorSetLayout DSLplanet;
 
 	// Vertex formats
 	VertexDescriptor VDBlinn;
 	VertexDescriptor VDEmission;
 	VertexDescriptor VDskyBox;
 // **A10** Place here the variable for the VertexDescriptor
+	VertexDescriptor VDplanet;
 
 	// Pipelines [Shader couples]
 	Pipeline PBlinn;
 	Pipeline PEmission;
 	Pipeline PskyBox;
 // **A10** Place here the variable for the Pipeline
+	Pipeline Pplanet;
 
 	// Scenes and texts
     TextMaker txt;
@@ -107,7 +127,9 @@ class A10 : public BaseProject {
 	DescriptorSet DSskyBox;
 
 // **A10** Place here the variables for the Model, the five texture (diffuse, specular, normal map, emission and clouds) and the Descrptor Set
-
+	Model Mplanet;
+	Texture Tdiffuse, Tspecular, TnormalMap, Temission, Tclouds;
+	DescriptorSet DSplanet;
 	
 	// Other application parameters
 	int currScene = 0;
@@ -156,8 +178,17 @@ class A10 : public BaseProject {
 					{0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT, sizeof(skyBoxUniformBufferObject), 1},
 					{1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},
 					{2, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 1, 1}
-				  });
+				});
 // **A10** Place here the initialization of the the DescriptorSetLayout
+		DSLplanet.init(this, {
+					{0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT, sizeof(matUniformBufferObject), 1},
+					{6, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_FRAGMENT_BIT, sizeof(paramUniformBufferObject), 1},
+					{1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // diffuse
+					{2, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // specular
+					{3, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // normal
+					{4, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // emission
+					{5, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1}   // clouds
+				});
 
 		// Vertex descriptors
 		VDBlinn.init(this, {
@@ -185,6 +216,15 @@ class A10 : public BaseProject {
 				         sizeof(glm::vec3), POSITION}
 				});
 // **A10** Place here the initialization for the VertexDescriptor
+		// **A10** Place here the initialization for the VertexDescriptor
+		VDplanet.init(this, {
+				  {0, sizeof(planetVertex), VK_VERTEX_INPUT_RATE_VERTEX}
+			}, {
+			  {0, 0, VK_FORMAT_R32G32B32_SFLOAT, offsetof(planetVertex, fragPos), sizeof(glm::vec3), POSITION},
+			  {0, 1, VK_FORMAT_R32G32B32_SFLOAT, offsetof(planetVertex, fragNorm), sizeof(glm::vec3), NORMAL},
+			  {0, 2, VK_FORMAT_R32G32_SFLOAT, offsetof(planetVertex, fragUV), sizeof(glm::vec2), UV},
+			  {0, 3, VK_FORMAT_R32G32B32A32_SFLOAT, offsetof(planetVertex, fragTan), sizeof(glm::vec4), TANGENT}
+			});
 
 		// Pipelines [Shader couples]
 		PBlinn.init(this, &VDBlinn,  "shaders/BlinnVert.spv",    "shaders/BlinnFrag.spv", {&DSLGlobal, &DSLBlinn});
@@ -195,6 +235,8 @@ class A10 : public BaseProject {
 // **A10** Place here the initialization of the pipeline. Remember that it should use shaders in files
 //		"shaders/NormalMapVert.spv" and "shaders/NormalMapFrag.spv", it should receive the new VertexDescriptor you defined
 //		And should receive two DescriptorSetLayout, the first should be DSLGlobal, while the other must be the one you defined
+		Pplanet.init(this, &VDplanet, "shaders/NormalMapVert.spv", "shaders/NormalMapFrag.spv", { &DSLGlobal, &DSLplanet });
+		// setAdvanced ???
 
 		// Create models
 		Mship.init(this, &VDBlinn, "models/X-WING-baker.obj", OBJ);
@@ -202,6 +244,7 @@ class A10 : public BaseProject {
 		MskyBox.init(this, &VDskyBox, "models/SkyBoxCube.obj", OBJ);
 // **A10** Place here the loading of the model. It should be contained in file "models/Sphere.gltf", it should use the
 //		Vertex descriptor you defined, and be of GLTF format.
+		Mplanet.init(this, &VDplanet, "models/Sphere.gltf", OBJ);
 		
 		// Create the textures
 		Tship.init(this, "textures/XwingColors.png");
@@ -210,24 +253,28 @@ class A10 : public BaseProject {
 		Tstars.init(this, "textures/constellation_figures.png");
 // **A10** Place here the loading of the four textures
 		// Diffuse color of the planet in: "2k_earth_daymap.jpg"
+		Tdiffuse.init(this, "textures/2k_earth_daymap.jpg");
 
 		// Specular color of the planet in: "2k_earth_specular_map.png"
+		Tspecular.init(this, "textures/2k_earth_specular_map.png");
 
 		// Normal map of the planet in: "2k_earth_normal_map.png"
 		// note that it must add a special feature to support the normal map, in particular
 		// the init function should be the following: .init(this, "textures/2k_earth_normal_map.png", VK_FORMAT_R8G8B8A8_UNORM);
+		TnormalMap.init(this, "textures/2k_earth_normal_map.png", VK_FORMAT_R8G8B8A8_UNORM);
 
 		// Emission map in: "2k_earth_nightmap.jpg"
+		Temission.init(this, "textures/2k_earth_nightmap.jpg");
 
 		// Clouds map in: "2k_earth_clouds.jpg"
-
+		Tclouds.init(this, "textures/2k_earth_clouds.jpg");
 
 		// Descriptor pool sizes
 		// WARNING!!!!!!!!
 		// Must be set before initializing the text and the scene
 // **A10** Update the number of elements to correctly size the descriptor sets pool
 		DPSZs.uniformBlocksInPool = 5;
-		DPSZs.texturesInPool = 4;
+		DPSZs.texturesInPool = 9;
 		DPSZs.setsInPool = 4;
 
 std::cout << "Initializing text\n";
@@ -248,6 +295,7 @@ std::cout << "Initializing text\n";
 		PEmission.create();
 		PskyBox.create();
 // **A10** Add the pipeline creation
+		Pplanet.create();
 
 		// Here you define the data set
 		DSship.init(this, &DSLBlinn, {&Tship});
@@ -255,6 +303,7 @@ std::cout << "Initializing text\n";
 		DSskyBox.init(this, &DSLskyBox, {&TskyBox, &Tstars});
 // **A10** Add the descriptor set creation
 // Textures should be passed in the diffuse, specular, normal map, emission and clouds order.
+		DSplanet.init(this, &DSLplanet, { &Tdiffuse, &Tspecular, &TnormalMap, &Temission, &Tclouds });
 			
 		DSGlobal.init(this, &DSLGlobal, {});
 
@@ -269,12 +318,14 @@ std::cout << "Initializing text\n";
 		PEmission.cleanup();
 		PskyBox.cleanup();
 // **A10** Add the pipeline cleanup
+		Pplanet.cleanup();
 
 		DSship.cleanup();
 		DSsun.cleanup();
 		DSskyBox.cleanup();
 		DSGlobal.cleanup();
 // **A10** Add the descriptor set cleanup
+		DSplanet.cleanup();
 
 		txt.pipelinesAndDescriptorSetsCleanup();
 	}
@@ -294,6 +345,13 @@ std::cout << "Initializing text\n";
 		Tstars.cleanup();
 		MskyBox.cleanup();
 // **A10** Add the cleanup for models and textures
+
+		Tdiffuse.cleanup();
+		Tspecular.cleanup();
+		TnormalMap.cleanup();
+		Temission.cleanup();
+		Tclouds.cleanup();
+		Mplanet.cleanup();
 		
 		
 		// Cleanup descriptor set layouts
@@ -302,12 +360,14 @@ std::cout << "Initializing text\n";
 		DSLGlobal.cleanup();
 		DSLskyBox.cleanup();
 // **A10** Add the cleanup for the descriptor set layout
+		DSLplanet.cleanup();
 		
 		// Destroies the pipelines
 		PBlinn.destroy();
 		PEmission.destroy();
 		PskyBox.destroy();
 // **A10** Add the cleanup for the pipeline
+		Pplanet.destroy();
 
 		txt.localCleanup();		
 	}
@@ -348,7 +408,12 @@ std::cout << "Initializing text\n";
 					static_cast<uint32_t>(MskyBox.indices.size()), 1, 0, 0, 0);
 
 // **A10** Add the commands to bind the pipeline, the mesh its two descriptor setes, and the draw call of the planet
-
+		Pplanet.bind(commandBuffer);
+		Mplanet.bind(commandBuffer);
+		DSGlobal.bind(commandBuffer, Pplanet, 0, currentImage);  // global 
+		DSplanet.bind(commandBuffer, Pplanet, 1, currentImage);  // planet
+		vkCmdDrawIndexed(commandBuffer, 
+					static_cast<uint32_t>(Mplanet.indices.size()), 1, 0, 0, 0);
 
 		txt.populateCommandBuffer(commandBuffer, currentImage, currScene);
 	}

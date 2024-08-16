@@ -38,20 +38,18 @@ struct skyBoxUniformBufferObject {
 
 // **A10** Place here the CPP struct for the uniform buffer for the matrices
 struct matUniformBufferObject {
-	glm::mat4 mvpMat;
-	glm::mat4 mMat;
-	glm::mat4 nMat;
+	alignas(16) glm::mat4 mvpMat;
+	alignas(16) glm::mat4 mMat;
+	alignas(16) glm::mat4 nMat;
 };
 
 // **A10** Place here the CPP struct for the uniform buffer for the parameters
 struct paramUniformBufferObject {
-	float Pow;
-	float Ang;
-	float ShowCloud;
-	float ShowTexture;
+	alignas(4) float Pow;
+	alignas(4) float Ang;
+	alignas(4) float ShowCloud;
+	alignas(4) float ShowTexture;
 };
-
-
 
 
 // The vertices data structures
@@ -74,7 +72,7 @@ struct skyBoxVertex {
 struct planetVertex {
 	glm::vec3 fragPos;
 	glm::vec3 fragNorm;
-	glm::vec3 fragUV;
+	glm::vec2 fragUV;
 	glm::vec4 fragTan;
 };
 
@@ -182,12 +180,12 @@ class A10 : public BaseProject {
 // **A10** Place here the initialization of the the DescriptorSetLayout
 		DSLplanet.init(this, {
 					{0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_VERTEX_BIT, sizeof(matUniformBufferObject), 1},
-					{6, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_FRAGMENT_BIT, sizeof(paramUniformBufferObject), 1},
 					{1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // diffuse
 					{2, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // specular
 					{3, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // normal
 					{4, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // emission
-					{5, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1}   // clouds
+					{5, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT, 0, 1},  // clouds
+					{6, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_FRAGMENT_BIT, sizeof(paramUniformBufferObject), 1}
 				});
 
 		// Vertex descriptors
@@ -236,7 +234,6 @@ class A10 : public BaseProject {
 //		"shaders/NormalMapVert.spv" and "shaders/NormalMapFrag.spv", it should receive the new VertexDescriptor you defined
 //		And should receive two DescriptorSetLayout, the first should be DSLGlobal, while the other must be the one you defined
 		Pplanet.init(this, &VDplanet, "shaders/NormalMapVert.spv", "shaders/NormalMapFrag.spv", { &DSLGlobal, &DSLplanet });
-		// setAdvanced ???
 
 		// Create models
 		Mship.init(this, &VDBlinn, "models/X-WING-baker.obj", OBJ);
@@ -244,7 +241,7 @@ class A10 : public BaseProject {
 		MskyBox.init(this, &VDskyBox, "models/SkyBoxCube.obj", OBJ);
 // **A10** Place here the loading of the model. It should be contained in file "models/Sphere.gltf", it should use the
 //		Vertex descriptor you defined, and be of GLTF format.
-		Mplanet.init(this, &VDplanet, "models/Sphere.gltf", OBJ);
+		Mplanet.init(this, &VDplanet, "models/Sphere.gltf", GLTF);
 		
 		// Create the textures
 		Tship.init(this, "textures/XwingColors.png");
@@ -273,9 +270,9 @@ class A10 : public BaseProject {
 		// WARNING!!!!!!!!
 		// Must be set before initializing the text and the scene
 // **A10** Update the number of elements to correctly size the descriptor sets pool
-		DPSZs.uniformBlocksInPool = 5;
+		DPSZs.uniformBlocksInPool = 7;
 		DPSZs.texturesInPool = 9;
-		DPSZs.setsInPool = 4;
+		DPSZs.setsInPool = 5;
 
 std::cout << "Initializing text\n";
 		txt.init(this, &outText);
@@ -647,29 +644,40 @@ ShowTexture    = 0;
 		DSskyBox.map(currentImage, &sbubo, 0);
 		
 // **A10** Add to compute the uniforms and pass them to the shaders. You need two uniforms: one for the matrices, and the other for the material parameters.
+		
+		matUniformBufferObject matUbo{};
+		paramUniformBufferObject paramUbo{};
 
-		// World and normal matrix should be the identiy. The World-View-Projection should be variable ViewPrj
+		// World and normal matrix should be the identity. The World-View-Projection should be variable ViewPrj
+		matUbo.nMat = glm::mat4(1.0f);
+		matUbo.mMat = glm::mat4(1.0f);
+		matUbo.mvpMat = ViewPrj;
 
 		// These informations should be used to fill the Uniform Buffer Object in Binding 0 of your DSL
-
+		DSplanet.map(currentImage, &matUbo, 0);
 
 		// The specular power of the uniform buffer containing the material parameters of the new object should be set to:
 		// XXX.Power = 200.0
 		// Where you replace XXX.Power with the field of the local variable corresponding to the uniform buffer object
+		paramUbo.Pow = 200.0;
 
 		// The textre angle parameter of the uniform buffer containing the material parameters of the new object shoud be set to: tTime * TangTurnTimeFact
 		// XXX.Ang = tTime * TangTurnTimeFact;
 		// Where you replace XXX.Ang with the local field of the variable corresponding to the uniform buffer object
+		paramUbo.Ang = tTime * TangTurnTimeFact;
 
 		// The selector for showing the clouds of the uniform buffer containing the material parameters of the new object should be set to:
 		// XXX.ShowCloud = ShowCloud
 		// Where you replace XXX.ShowCloud with the local field of the variable corresponding to the uniform buffer object
+		paramUbo.ShowCloud = ShowCloud;
 
 		// The selector for showing the clouds of the uniform buffer containing the material parameters of the new object should be set to:
 		// XXX.ShowTexture = ShowTexture
 		// Where you replace XXX.ShowTexture with the local field of the variable corresponding to the uniform buffer object
+		paramUbo.ShowTexture = ShowTexture;
 
 		// These informations should be used to fill the Uniform Buffer Object in Binding 6 of your DSL
+		DSplanet.map(currentImage, &paramUbo, 6);
 	}
 };
 

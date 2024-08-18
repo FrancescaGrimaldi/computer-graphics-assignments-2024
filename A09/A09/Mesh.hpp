@@ -61,32 +61,32 @@ void MakeCube(float size, std::vector<std::array<float,6>> &vertices, std::vecto
 	float halfSize = size / 2.0f;
 
     vertices = {
-        // 0-3
+        // 0-3 bottom
         {-halfSize, -halfSize, -halfSize, 0.0f, -1.0f, 0.0f}, // 0
         {-halfSize, -halfSize,  halfSize, 0.0f, -1.0f, 0.0f}, // 1
         { halfSize, -halfSize, -halfSize, 0.0f, -1.0f, 0.0f}, // 2
         { halfSize, -halfSize,  halfSize, 0.0f, -1.0f, 0.0f}, // 3
-        // 4-7
+        // 4-7 top
         {-halfSize,  halfSize, -halfSize, 0.0f, 1.0f, 0.0f},
         {-halfSize,  halfSize,  halfSize, 0.0f, 1.0f, 0.0f},
         { halfSize,  halfSize, -halfSize, 0.0f, 1.0f, 0.0f},
         { halfSize,  halfSize,  halfSize, 0.0f, 1.0f, 0.0f},
-        // 8-11
+        // 8-11 front
         {-halfSize, -halfSize,  halfSize, 0.0f, 0.0f, 1.0f},
         { halfSize, -halfSize,  halfSize, 0.0f, 0.0f, 1.0f},
         {-halfSize,  halfSize,  halfSize, 0.0f, 0.0f, 1.0f},
         { halfSize,  halfSize,  halfSize, 0.0f, 0.0f, 1.0f},
-        // 12-15
+        // 12-15 back
         {-halfSize, -halfSize, -halfSize, 0.0f, 0.0f, -1.0f},
         { halfSize, -halfSize, -halfSize, 0.0f, 0.0f, -1.0f},
         {-halfSize,  halfSize, -halfSize, 0.0f, 0.0f, -1.0f},
         { halfSize,  halfSize, -halfSize, 0.0f, 0.0f, -1.0f},
-        // 16-19
+        // 16-19 left
         {-halfSize, -halfSize, -halfSize, -1.0f, 0.0f, 0.0f},
         {-halfSize, -halfSize,  halfSize, -1.0f, 0.0f, 0.0f},
         {-halfSize,  halfSize, -halfSize, -1.0f, 0.0f, 0.0f},
         {-halfSize,  halfSize,  halfSize, -1.0f, 0.0f, 0.0f},
-        // 20-23
+        // 20-23 right
         { halfSize, -halfSize, -halfSize, 1.0f, 0.0f, 0.0f},
         { halfSize, -halfSize,  halfSize, 1.0f, 0.0f, 0.0f},
         { halfSize,  halfSize, -halfSize, 1.0f, 0.0f, 0.0f},
@@ -98,8 +98,8 @@ void MakeCube(float size, std::vector<std::array<float,6>> &vertices, std::vecto
         0,2,1, 1,2,3,           // bottom
         16,17,18, 17,19,18,     // left
         20,22,21, 21,22,23,     // right
-        8,9,10, 10,9,11,        // front face
-        12,14,13, 13,14,15,     // back face
+        8,9,10, 10,9,11,        // front
+        12,14,13, 13,14,15,     // back
     };
 
 }
@@ -132,6 +132,7 @@ void MakeCylinder(float radius, float height, int slices, std::vector<std::array
 	vertices.resize((slices + 1) * 2 * 2);	// adding double the vertices to include two normals
 	indices.resize(6 * 2 * slices);
 
+	// loop to generate vertices around the circumference
 	for (int i = 0; i <= slices; ++i) {
 		float ang = 2.0f * M_PI * (float)i / (float)slices;
 		float x = radius * cos(ang);
@@ -148,6 +149,7 @@ void MakeCylinder(float radius, float height, int slices, std::vector<std::array
 	int topCenterIdx = vertices.size() + 1;	// index of the top center vertex
 	int offset = slices + 1;
 
+	// indices for side, top and bottom faces
 	for (int i = 0; i < slices; ++i) {
 		indices[6 * i] = i;
 		indices[6 * i + 1] = i + slices + 1;
@@ -192,34 +194,35 @@ void MakeCone(float radius, float height, int slices, std::vector<std::array<flo
 				   { 0.0f,   height/2.0f,0.0f,0.0f,0.0f,1.0f}};
 	indices = {0, 1, 2};
 */
+	float halfHeight = height / 2.0f;
 
 	vertices.resize(slices + 2);
 	indices.resize(3 * slices);
 
-	vertices[slices] = { 0.0f, height/2.0f, 0.0f, 0.0f, 0.0f, 0.0f };  // Apex of the cone
+	vertices[slices] = { 0.0f, halfHeight, 0.0f, 0.0f, 0.0f, 0.0f };  // apex of the cone
+
+	int bottomCenterIdx = vertices.size(); // index of the bottom center vertex
 
 	for (int i = 0; i < slices; ++i) {
 		float ang = 2.0f * M_PI * (float)i / (float)slices;
 		float x = radius * cos(ang);
 		float z = radius * sin(ang);
 
-		vertices[i] = { x, -height/2.0f, z, x, 0.0f, z};
+		// normal vector in the base of the lateral surface
+		glm::vec3 normalVector = normalize(glm::vec3(height * cos(ang), radius, height * sin(ang)));
+
+		vertices[i] = { x, -halfHeight, z, normalVector[0], normalVector[1], normalVector[2] };	// base vertices
 
 		indices[3 * i] = i;
-		indices[3 * i + 1] = slices;  // Apex index 
+		indices[3 * i + 1] = slices;  // apex index 
 		indices[3 * i + 2] = (i + 1) % slices;
-	}
 
-	// TODO: review this part
-	// Generate bottom cap vertices and indices
-	int bottomCenterIdx = vertices.size(); // Index of the bottom center vertex
-	vertices.push_back({ 0.0f, -height / 2.0f, 0.0f, 0.0f, -1.0f, 0.0f }); // Bottom center vertex
-
-	for (int i = 0; i < slices; ++i) {
 		indices.push_back(bottomCenterIdx);
 		indices.push_back(i);
 		indices.push_back((i + 1) % slices);
 	}
+
+	vertices.push_back({ 0.0f, -halfHeight, 0.0f, 0.0f, -1.0f, 0.0f });		// bottom center vertex
 }
 
 void MakeSphere(float radius, int rings, int slices, std::vector<std::array<float,6>> &vertices, std::vector<uint32_t> &indices)

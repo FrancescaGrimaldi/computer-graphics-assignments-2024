@@ -43,11 +43,11 @@ C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\modules\T
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\modules\TextMaker.hpp(114,1): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\modules\TextMaker.hpp(115,1): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\modules\TextMaker.hpp(116,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(132,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(149,39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(150,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(205,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(218,39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(137,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(148,39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(149,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(204,39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(207,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(259,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\Mesh.hpp(261,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A09\A09\A09.cpp(255,45): warning C4244: '=': conversion from 'double' to 'T', possible loss of data

@@ -27,11 +27,13 @@ void MakeSquare(float size, std::vector<std::array<float,6>> &vertices, std::vec
 // be a multiple of 3: each group of three indices, defines a different triangle.
 //
 // HINT: this procedure has already been implemented. You can keep it as is
+	float halfSize = size / 2.0f;
+
 	vertices = {
-				   {-size/2.0f,0.0f,-size/2.0f,0.0f,1.0f,0.0f},
-				   {-size/2.0f,0.0f, size/2.0f,0.0f,1.0f,0.0f},
-				   { size/2.0f,0.0f,-size/2.0f,0.0f,1.0f,0.0f},
-				   { size/2.0f,0.0f, size/2.0f,0.0f,1.0f,0.0f}};
+				   {-halfSize,0.0f,-halfSize,0.0f,1.0f,0.0f},
+				   {-halfSize,0.0f, halfSize,0.0f,1.0f,0.0f},
+				   { halfSize,0.0f,-halfSize,0.0f,1.0f,0.0f},
+				   { halfSize,0.0f, halfSize,0.0f,1.0f,0.0f}};
 	indices = {0, 1, 2,    1, 3, 2};
 }
 
@@ -56,37 +58,39 @@ void MakeCube(float size, std::vector<std::array<float,6>> &vertices, std::vecto
 				   { size/2.0f,0.0f, size/2.0f,0.0f,1.0f,0.0f}};
 	indices = {0, 1, 2,    1, 3, 2};
 */ 
+	float halfSize = size / 2.0f;
+
     vertices = {
         // 0-3
-        {-size/2.0f, -size/2.0f, -size/2.0f, 0.0f, -1.0f, 0.0f}, // 0
-        {-size/2.0f, -size/2.0f,  size/2.0f, 0.0f, -1.0f, 0.0f}, // 1
-        { size/2.0f, -size/2.0f, -size/2.0f, 0.0f, -1.0f, 0.0f}, // 2
-        { size/2.0f, -size/2.0f,  size/2.0f, 0.0f, -1.0f, 0.0f}, // 3
+        {-halfSize, -halfSize, -halfSize, 0.0f, -1.0f, 0.0f}, // 0
+        {-halfSize, -halfSize,  halfSize, 0.0f, -1.0f, 0.0f}, // 1
+        { halfSize, -halfSize, -halfSize, 0.0f, -1.0f, 0.0f}, // 2
+        { halfSize, -halfSize,  halfSize, 0.0f, -1.0f, 0.0f}, // 3
         // 4-7
-        {-size/2.0f,  size/2.0f, -size/2.0f, 0.0f, 1.0f, 0.0f},
-        {-size/2.0f,  size/2.0f,  size/2.0f, 0.0f, 1.0f, 0.0f},
-        { size/2.0f,  size/2.0f, -size/2.0f, 0.0f, 1.0f, 0.0f},
-        { size/2.0f,  size/2.0f,  size/2.0f, 0.0f, 1.0f, 0.0f},
+        {-halfSize,  halfSize, -halfSize, 0.0f, 1.0f, 0.0f},
+        {-halfSize,  halfSize,  halfSize, 0.0f, 1.0f, 0.0f},
+        { halfSize,  halfSize, -halfSize, 0.0f, 1.0f, 0.0f},
+        { halfSize,  halfSize,  halfSize, 0.0f, 1.0f, 0.0f},
         // 8-11
-        {-size/2.0f, -size/2.0f,  size/2.0f, 0.0f, 0.0f, 1.0f},
-        { size/2.0f, -size/2.0f,  size/2.0f, 0.0f, 0.0f, 1.0f},
-        {-size/2.0f,  size/2.0f,  size/2.0f, 0.0f, 0.0f, 1.0f},
-        { size/2.0f,  size/2.0f,  size/2.0f, 0.0f, 0.0f, 1.0f},
+        {-halfSize, -halfSize,  halfSize, 0.0f, 0.0f, 1.0f},
+        { halfSize, -halfSize,  halfSize, 0.0f, 0.0f, 1.0f},
+        {-halfSize,  halfSize,  halfSize, 0.0f, 0.0f, 1.0f},
+        { halfSize,  halfSize,  halfSize, 0.0f, 0.0f, 1.0f},
         // 12-15
-        {-size/2.0f, -size/2.0f, -size/2.0f, 0.0f, 0.0f, -1.0f},
-        { size/2.0f, -size/2.0f, -size/2.0f, 0.0f, 0.0f, -1.0f},
-        {-size/2.0f,  size/2.0f, -size/2.0f, 0.0f, 0.0f, -1.0f},
-        { size/2.0f,  size/2.0f, -size/2.0f, 0.0f, 0.0f, -1.0f},
+        {-halfSize, -halfSize, -halfSize, 0.0f, 0.0f, -1.0f},
+        { halfSize, -halfSize, -halfSize, 0.0f, 0.0f, -1.0f},
+        {-halfSize,  halfSize, -halfSize, 0.0f, 0.0f, -1.0f},
+        { halfSize,  halfSize, -halfSize, 0.0f, 0.0f, -1.0f},
         // 16-19
-        {-size/2.0f, -size/2.0f, -size/2.0f, -1.0f, 0.0f, 0.0f},
-        {-size/2.0f, -size/2.0f,  size/2.0f, -1.0f, 0.0f, 0.0f},
-        {-size/2.0f,  size/2.0f, -size/2.0f, -1.0f, 0.0f, 0.0f},
-        {-size/2.0f,  size/2.0f,  size/2.0f, -1.0f, 0.0f, 0.0f},
+        {-halfSize, -halfSize, -halfSize, -1.0f, 0.0f, 0.0f},
+        {-halfSize, -halfSize,  halfSize, -1.0f, 0.0f, 0.0f},
+        {-halfSize,  halfSize, -halfSize, -1.0f, 0.0f, 0.0f},
+        {-halfSize,  halfSize,  halfSize, -1.0f, 0.0f, 0.0f},
         // 20-23
-        { size/2.0f, -size/2.0f, -size/2.0f, 1.0f, 0.0f, 0.0f},
-        { size/2.0f, -size/2.0f,  size/2.0f, 1.0f, 0.0f, 0.0f},
-        { size/2.0f,  size/2.0f, -size/2.0f, 1.0f, 0.0f, 0.0f},
-        { size/2.0f,  size/2.0f,  size/2.0f, 1.0f, 0.0f, 0.0f}
+        { halfSize, -halfSize, -halfSize, 1.0f, 0.0f, 0.0f},
+        { halfSize, -halfSize,  halfSize, 1.0f, 0.0f, 0.0f},
+        { halfSize,  halfSize, -halfSize, 1.0f, 0.0f, 0.0f},
+        { halfSize,  halfSize,  halfSize, 1.0f, 0.0f, 0.0f}
     };
 
     indices = {
@@ -123,17 +127,26 @@ void MakeCylinder(float radius, float height, int slices, std::vector<std::array
 				   { radius, height/2.0f,0.0f,0.0f,0.0f,1.0f}};
     indices = {0, 2, 1,    1, 2, 3};
 */
-	vertices.resize((slices + 1) * 2);
-	indices.resize(6 * slices);
+	float halfHeight = height / 2.0f;
+
+	vertices.resize((slices + 1) * 2 * 2);	// adding double the vertices to include two normals
+	indices.resize(6 * 2 * slices);
 
 	for (int i = 0; i <= slices; ++i) {
 		float ang = 2.0f * M_PI * (float)i / (float)slices;
 		float x = radius * cos(ang);
 		float z = radius * sin(ang);
 
-		vertices[i] = { x, -height/2.0f, z, x, 0.0f, z };			  // bottom
-		vertices[i+slices+1] = { x, height/2.0f, z, x, 0.0f, z };	  // top
+		vertices[i] = { x, -halfHeight, z, x, 0.0f, z };			  // bottom side normal
+		vertices[i+slices+1] = { x, halfHeight, z, x, 0.0f, z };	  // top side normal
+
+		vertices[i + 2 * (slices + 1)] = { x, -halfHeight, z, 0.0f, -1.0f, 0.0f };		// bottom down normal
+		vertices[i + 3 * (slices + 1)] = { x, halfHeight, z, 0.0f, 1.0f, 0.0f };		// top up normal
 	}
+
+	int bottomCenterIdx = vertices.size();	// index of the bottom center vertex
+	int topCenterIdx = vertices.size() + 1;	// index of the top center vertex
+	int offset = slices + 1;
 
 	for (int i = 0; i < slices; ++i) {
 		indices[6 * i] = i;
@@ -143,28 +156,18 @@ void MakeCylinder(float radius, float height, int slices, std::vector<std::array
 		indices[6 * i + 3] = i + 1;
 		indices[6 * i + 4] = i + slices + 1;
 		indices[6 * i + 5] = i + slices + 2;
-	}
 
-	// TODO: review this part
-	int bottomCenterIdx = vertices.size(); // Index of the bottom center vertex
-	int topCenterIdx = vertices.size() + 1; // Index of the top center vertex
-	vertices.push_back({ 0.0f, -height/2.0f, 0.0f, 0.0f, -1.0f, 0.0f }); // Bottom center vertex
-	vertices.push_back({ 0.0f, height/2.0f, 0.0f, 0.0f, 1.0f, 0.0f }); // Top center vertex
-
-	// Generate bottom cap indices
-	for (int i = 0; i < slices; ++i) {
 		indices.push_back(bottomCenterIdx);
 		indices.push_back(i);
 		indices.push_back((i + 1) % slices);
-	}
 
-	// Generate top cap indices
-	int offset = slices + 1;
-	for (int i = 0; i < slices; ++i) {
 		indices.push_back(topCenterIdx);
 		indices.push_back((i + 1) % slices + offset);
 		indices.push_back(i + offset);
 	}
+
+	vertices.push_back({ 0.0f, -halfHeight, 0.0f, 0.0f, -1.0f, 0.0f }); // bottom center vertex
+	vertices.push_back({ 0.0f, halfHeight, 0.0f, 0.0f, 1.0f, 0.0f });	// top center vertex
 }
 
 void MakeCone(float radius, float height, int slices, std::vector<std::array<float,6>> &vertices, std::vector<uint32_t> &indices) {

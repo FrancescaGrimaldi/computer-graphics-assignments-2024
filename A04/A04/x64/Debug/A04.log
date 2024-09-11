@@ -1,111 +1,191 @@
 ﻿  A04.cpp
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\headers\tiny_gltf.h(3039,17): warning C4018: '>=': signed/unsigned mismatch
+  (compiling source file 'A04.cpp')
+  
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\headers\tiny_gltf.h(3134,17): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\headers\tiny_gltf.h(5176,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\headers\tiny_gltf.h(5205,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\headers\tiny_gltf.h(5393,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(348,31): warning C4099: 'VertexDescriptor': type name first seen using 'struct' now seen using 'class'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(204,8): message : see declaration of 'VertexDescriptor'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(350,22): warning C4099: 'Texture': type name first seen using 'struct' now seen using 'class'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(249,8): message : see declaration of 'Texture'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(351,23): warning C4099: 'Pipeline': type name first seen using 'struct' now seen using 'class'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(291,8): message : see declaration of 'Pipeline'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(352,34): warning C4099: 'DescriptorSetLayout': type name first seen using 'struct' now seen using 'class'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(283,8): message : see declaration of 'DescriptorSetLayout'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(353,28): warning C4099: 'DescriptorSet': type name first seen using 'struct' now seen using 'class'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(329,8): message : see declaration of 'DescriptorSet'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1572,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\headers\tiny_gltf.h(5176,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\headers\tiny_gltf.h(5205,59): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\headers\tiny_gltf.h(5393,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(348,15): warning C4099: 'VertexDescriptor': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'A04.cpp')
+      C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(204,8):
+      see declaration of 'VertexDescriptor'
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(350,15): warning C4099: 'Texture': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'A04.cpp')
+      C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(249,8):
+      see declaration of 'Texture'
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(351,15): warning C4099: 'Pipeline': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'A04.cpp')
+      C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(291,8):
+      see declaration of 'Pipeline'
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(352,15): warning C4099: 'DescriptorSetLayout': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'A04.cpp')
+      C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(283,8):
+      see declaration of 'DescriptorSetLayout'
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(353,15): warning C4099: 'DescriptorSet': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'A04.cpp')
+      C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(329,8):
+      see declaration of 'DescriptorSet'
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1572,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1835,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1835,16): warning C4244:         with
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1835,16): warning C4244:         [
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1835,16): warning C4244:             T=float
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1835,16): warning C4244:         ]
+  (compiling source file 'A04.cpp')
+  
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1836,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2522,52): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=unsigned int
-          ]
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2549,151): warning C4267: 'argument': conversion from 'size_t' to 'const unsigned long', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2561,74): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2603,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2617,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2631,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2645,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(3121,48): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(9,483): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1836,16): warning C4244:         with
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1836,16): warning C4244:         [
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1836,16): warning C4244:             T=float
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(1836,16): warning C4244:         ]
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2522,50): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2522,50): warning C4267:         with
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2522,50): warning C4267:         [
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2522,50): warning C4267:             _Ty=unsigned int
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2522,50): warning C4267:         ]
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2549,135): warning C4267: 'argument': conversion from 'size_t' to 'const unsigned long', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2549,97): warning C4267: 'argument': conversion from 'size_t' to 'const unsigned long', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2549,76): warning C4267: 'argument': conversion from 'size_t' to 'const unsigned long', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2561,71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2603,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2617,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2631,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(2645,23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Starter.hpp(3121,46): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(9,109): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(9,115): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(9,130): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(9,136): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'A04.cpp')
+  
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(104,21): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(113,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(114,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(115,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(116,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Scene.hpp(51,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Scene.hpp(65,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Scene.hpp(78,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(164,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(252,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(113,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(114,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(115,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\TextMaker.hpp(116,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Scene.hpp(51,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Scene.hpp(65,26): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\modules\Scene.hpp(78,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'A04.cpp')
+  
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(164,7): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(252,25): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(285,75): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(288,26): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(289,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(355,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(360,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(415,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(416,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(427,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(429,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(430,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(432,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(433,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(434,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(435,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(439,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(440,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(441,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(442,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(443,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(444,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(445,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(446,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(447,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(451,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(452,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(453,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(454,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(455,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(456,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(457,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(458,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(459,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(464,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(466,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(469,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(470,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(471,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(472,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(476,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(477,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(478,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(482,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(483,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(484,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(488,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(489,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(490,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(494,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(495,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(496,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(500,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(501,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(502,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(503,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(505,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(506,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(507,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(508,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(355,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(360,18): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(415,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(416,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(427,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(429,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(430,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(432,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(433,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(434,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(435,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(439,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(440,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(441,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(442,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(443,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(444,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(445,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(446,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(447,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(451,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(452,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(453,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(454,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(455,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(456,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(457,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(458,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(459,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(464,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(466,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(469,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(470,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(471,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(472,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(476,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(477,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(478,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(482,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(483,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(484,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(488,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(489,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(490,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(494,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(495,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(496,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(500,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(501,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(502,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(503,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(505,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(506,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(507,8): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(508,8): warning C4305: '=': truncation from 'double' to 'float'
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(519,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(520,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\fragr\source\repos\computer-graphics-assignments-2024\A04\A04\A04.cpp(521,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data

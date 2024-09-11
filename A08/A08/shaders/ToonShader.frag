@@ -64,7 +64,7 @@ Paramters:
 
 
 	vec3 Diffuse = Md * diff;
-	vec3 Specular = Ms * pow(spec, 200.0f); 
+	vec3 Specular = Ms * spec; 
 	
 	return (Diffuse + Specular);
 }

@@ -72,7 +72,6 @@ void SetProjections(A03 *A) {
 	A->SetMatrix(2,  M);
 	
 	// Trimetric, with an angle of alpha of 30 degree, and beta of 60 degrees
-	// swapped angles to match the view in professor's screenshot
 	M = glm::mat4(1.0f);
 
 	Ry = glm::rotate(M, glm::radians(30.0f), glm::vec3(0, 1, 0));		// angle beta
@@ -85,8 +84,8 @@ void SetProjections(A03 *A) {
 	M = glm::mat4(1.0f);
 
 	// shear
-	float alpha = 45;
-	float rho = 0.5;	// length of z axis is halved
+	float alpha = glm::radians(45.0f);
+	float rho = 0.5f;	// length of z axis is halved
 
 	glm::mat4 Sh = glm::mat4(1, 0, -rho*cos(alpha), 0,
 							 0, 1, -rho*sin(alpha), 0,

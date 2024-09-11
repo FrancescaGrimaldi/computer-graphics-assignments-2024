@@ -112,7 +112,6 @@ void MakeCylinder(float radius, float height, int slices, std::vector<glm::vec3>
 		indices[6 * i + 5] = i + slices + 2;
 	}
 
-	// TODO: review this part
 	int bottomCenterIdx = vertices.size(); // Index of the bottom center vertex
 	int topCenterIdx = vertices.size() + 1; // Index of the top center vertex
 	vertices.push_back(glm::vec3(0.0f, -height / 2.0f, 0.0f)); // Bottom center vertex
@@ -171,8 +170,6 @@ void MakeCone(float radius, float height, int slices, std::vector<glm::vec3> &ve
 		indices[3 * i + 2] = (i + 1) % slices;
 	}
 
-	// TODO: review this part
-	// Generate bottom cap vertices and indices
 	int bottomCenterIdx = vertices.size(); // Index of the bottom center vertex
 	vertices.push_back(glm::vec3(0.0f, -height / 2.0f, 0.0f)); // Bottom center vertex
 
@@ -212,8 +209,10 @@ void MakeSphere(float radius, int rings, int slices, std::vector<glm::vec3> &ver
 
 	for (int i = 0; i <= rings; ++i) {
 		float ang2 = M_PI * (float)i / (float)rings;
+		
 		for (int j = 0; j <= slices; ++j) {
 			float ang = 2.0f * M_PI * (float)j / (float)slices;
+			
 			float x = radius * sin(ang2) * cos(ang);
 			float y = radius * cos(ang2);
 			float z = radius * sin(ang2) * sin(ang);

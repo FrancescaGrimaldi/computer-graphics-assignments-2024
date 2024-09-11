@@ -129,47 +129,62 @@ void MakeCylinder(float radius, float height, int slices, std::vector<std::array
 */
 	float halfHeight = height / 2.0f;
 
-	vertices.resize((slices + 1) * 2 * 2);	// adding double the vertices to include two normals
-	indices.resize(6 * 2 * slices);
+	vertices.resize((slices + 1) * 2 * 2); // adding double the vertices to include two normals
+    indices.resize(6 * 2 * slices);
 
-	// loop to generate vertices around the circumference
-	for (int i = 0; i <= slices; ++i) {
-		float ang = 2.0f * M_PI * (float)i / (float)slices;
-		float x = radius * cos(ang);
-		float z = radius * sin(ang);
+    int vertexCount = 0;
 
-		vertices[i] = { x, -halfHeight, z, x, 0.0f, z };			  // bottom side normal
-		vertices[i+slices+1] = { x, halfHeight, z, x, 0.0f, z };	  // top side normal
+    // Generate vertices for the cylinder
+    for (int i = 0; i < slices; ++i) {
+        float angle = 2.0f * M_PI * i / slices;
+        float x = radius * cos(angle);
+        float z = radius * sin(angle);
 
-		vertices[i + 2 * (slices + 1)] = { x, -halfHeight, z, 0.0f, -1.0f, 0.0f };		// bottom down normal
-		vertices[i + 3 * (slices + 1)] = { x, halfHeight, z, 0.0f, 1.0f, 0.0f };		// top up normal
-	}
+		vertices[vertexCount] = { x, halfHeight, z, 0.0f, 1.0f, 0.0f };     // top - normal pointing upward
+        vertexCount++;
 
-	int bottomCenterIdx = vertices.size();	// index of the bottom center vertex
-	int topCenterIdx = vertices.size() + 1;	// index of the top center vertex
-	int offset = slices + 1;
+		vertices[vertexCount] = { x, -halfHeight, z, 0.0f, -1.0f, 0.0f };   // bottom - normal pointing downward
+        vertexCount++;
 
-	// indices for side, top and bottom faces
-	for (int i = 0; i < slices; ++i) {
-		indices[6 * i] = i;
-		indices[6 * i + 1] = i + slices + 1;
-		indices[6 * i + 2] = i + 1;
+        vertices[vertexCount] = { x, halfHeight, z, x / radius, 0.0f, z / radius };    // top - side normal
+        vertexCount++;
 
-		indices[6 * i + 3] = i + 1;
-		indices[6 * i + 4] = i + slices + 1;
-		indices[6 * i + 5] = i + slices + 2;
+		vertices[vertexCount] = { x, -halfHeight, z, x / radius, 0.0f, z / radius };   // bottom - side normal
+        vertexCount++;
+    }
 
-		indices.push_back(bottomCenterIdx);
-		indices.push_back(i);
-		indices.push_back((i + 1) % slices);
+    int topCenterIdx = vertexCount; // index of the top center vertex
+	vertices[vertexCount] = { 0.0f, halfHeight, 0.0f, 0.0f, 1.0f, 0.0f };	// top center vertex
+	vertexCount++;
 
-		indices.push_back(topCenterIdx);
-		indices.push_back((i + 1) % slices + offset);
-		indices.push_back(i + offset);
-	}
+	int bottomCenterIdx = vertexCount;	 // index of the bottom center vertex
+	vertices[vertexCount] = { 0.0f, -halfHeight, 0.0f, 0.0f, -1.0f, 0.0f };	// bottom center vertex
 
-	vertices.push_back({ 0.0f, -halfHeight, 0.0f, 0.0f, -1.0f, 0.0f }); // bottom center vertex
-	vertices.push_back({ 0.0f, halfHeight, 0.0f, 0.0f, 1.0f, 0.0f });	// top center vertex
+    // indices for top and bottom faces
+    int idx = 0;
+    for (int i = 0; i < slices; ++i) {
+        indices[idx++] = topCenterIdx;
+        indices[idx++] = ((i + 1) % slices) * 4;
+        indices[idx++] = i * 4;
+
+        indices[idx++] = bottomCenterIdx;
+        indices[idx++] = i * 4 + 1;
+        indices[idx++] = ((i + 1) % slices) * 4 + 1;
+    }
+
+    // indices for the side
+    for (int i = 0; i < slices; ++i) {
+
+		// 1st triangle of quadrilateral
+        indices[idx++] = i * 4 + 2;
+		indices[idx++] = ((i + 1) % slices) * 4 + 2;
+        indices[idx++] = i * 4 + 3;
+
+		// 2nd triangle of quadrilateral
+		indices[idx++] = ((i + 1) % slices) * 4 + 2;
+		indices[idx++] = ((i + 1) % slices) * 4 + 3;
+        indices[idx++] = i * 4 + 3;
+    }
 }
 
 void MakeCone(float radius, float height, int slices, std::vector<std::array<float,6>> &vertices, std::vector<uint32_t> &indices) {
@@ -196,12 +211,10 @@ void MakeCone(float radius, float height, int slices, std::vector<std::array<flo
 */
 	float halfHeight = height / 2.0f;
 
-	vertices.resize(slices + 2);
-	indices.resize(3 * slices);
+	vertices.resize(slices * 2 + 2); // 2 vertices foe rach slice + 2 (apex + base center)
+	indices.resize(slices * 3 * 2);  // 3 indices for each triangle
 
-	vertices[slices] = { 0.0f, halfHeight, 0.0f, 0.0f, 0.0f, 0.0f };  // apex of the cone
-
-	int bottomCenterIdx = vertices.size(); // index of the bottom center vertex
+	int vertexCounter = 0;
 
 	for (int i = 0; i < slices; ++i) {
 		float ang = 2.0f * M_PI * (float)i / (float)slices;
@@ -209,20 +222,36 @@ void MakeCone(float radius, float height, int slices, std::vector<std::array<flo
 		float z = radius * sin(ang);
 
 		// normal vector in the base of the lateral surface
-		glm::vec3 normalVector = normalize(glm::vec3(height * cos(ang), radius, height * sin(ang)));
+		glm::vec3 normalVec = normalize(glm::vec3(height * cos(ang), radius, height * sin(ang)));
 
-		vertices[i] = { x, -halfHeight, z, normalVector[0], normalVector[1], normalVector[2] };	// base vertices
+		vertices[vertexCounter] = { x, -halfHeight, z, 0.0f, 0.0f, 0.0f }; // base - no normal
+		vertexCounter++;
 
-		indices[3 * i] = i;
-		indices[3 * i + 1] = slices;  // apex index 
-		indices[3 * i + 2] = (i + 1) % slices;
-
-		indices.push_back(bottomCenterIdx);
-		indices.push_back(i);
-		indices.push_back((i + 1) % slices);
+		vertices[vertexCounter] = { x, -halfHeight, z, normalVec[0], normalVec[1], normalVec[2] };	// base - side normal
+		vertexCounter++;
 	}
 
-	vertices.push_back({ 0.0f, -halfHeight, 0.0f, 0.0f, -1.0f, 0.0f });		// bottom center vertex
+	vertices[vertexCounter] = { 0.0f, halfHeight, 0.0f, 0.0f, 0.0f, 0.0f };	// apex of the cone
+	int apexIdx = vertexCounter; // index of the apex vertex
+
+	int bottomCenterIdx = vertexCounter + 1; // index of the bottom center vertex
+	vertices[vertexCounter + 1] = { 0.0f, -halfHeight, 0.0f, 0.0f, -1.0f, 0.0f };	// bottom center vertex
+
+	int idx = 0;
+
+	// base indices
+    for (int i = 0; i < slices; ++i) {
+        indices[idx++] = bottomCenterIdx;
+        indices[idx++] = i * 2;
+        indices[idx++] = ((i + 1) % slices) * 2;
+    }
+
+	// side indices
+    for (int i = 0; i < slices; ++i) {
+        indices[idx++] = apexIdx;
+        indices[idx++] = ((i + 1) % slices) * 2 + 1;
+        indices[idx++] = i * 2 + 1;
+    }
 }
 
 void MakeSphere(float radius, int rings, int slices, std::vector<std::array<float,6>> &vertices, std::vector<uint32_t> &indices)

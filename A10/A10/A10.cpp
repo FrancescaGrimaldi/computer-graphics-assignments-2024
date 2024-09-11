@@ -659,9 +659,9 @@ ShowTexture    = 0;
 		// The specular power of the uniform buffer containing the material parameters of the new object should be set to:
 		// XXX.Power = 200.0
 		// Where you replace XXX.Power with the field of the local variable corresponding to the uniform buffer object
-		paramUbo.Pow = 200.0;
+		paramUbo.Pow = 200.0f;
 
-		// The textre angle parameter of the uniform buffer containing the material parameters of the new object shoud be set to: tTime * TangTurnTimeFact
+		// The texture angle parameter of the uniform buffer containing the material parameters of the new object shoud be set to: tTime * TangTurnTimeFact
 		// XXX.Ang = tTime * TangTurnTimeFact;
 		// Where you replace XXX.Ang with the local field of the variable corresponding to the uniform buffer object
 		paramUbo.Ang = tTime * TangTurnTimeFact;
